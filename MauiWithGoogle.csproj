@@ -22,7 +22,7 @@
 		<ApplicationTitle>MauiAuthDemo</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauiauthdemo</ApplicationId>
+		<ApplicationId>com.companyname.mauiwithgoogle</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

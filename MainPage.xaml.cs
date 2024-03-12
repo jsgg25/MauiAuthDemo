@@ -1,4 +1,4 @@
-﻿using MauiAuthDemo.GoogleAuth;
+﻿using MauiAuthDemo.GoogleServices;
 
 namespace MauiAuthDemo
 {

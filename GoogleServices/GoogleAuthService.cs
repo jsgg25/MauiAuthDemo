@@ -1,5 +1,5 @@
 ﻿
-namespace MauiAuthDemo.GoogleAuth
+namespace MauiAuthDemo.GoogleServices
 {
     public partial class GoogleAuthService : IGoogleAuthService
     {

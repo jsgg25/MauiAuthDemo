@@ -1,4 +1,4 @@
-﻿namespace MauiAuthDemo.GoogleAuth
+﻿namespace MauiAuthDemo.GoogleServices
 {
     public class GoogleUserDTO
     {

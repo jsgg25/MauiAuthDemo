@@ -2,7 +2,7 @@
 using Google.SignIn;
 using UIKit;
 
-namespace MauiAuthDemo.GoogleAuth
+namespace MauiAuthDemo.GoogleServices
 {
     public partial class GoogleAuthService
     {

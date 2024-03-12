@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Gms.Auth.Api.SignIn;
 
-namespace MauiAuthDemo.GoogleAuth
+namespace MauiAuthDemo.GoogleServices
 {
     public partial class GoogleAuthService
     {
