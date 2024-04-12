@@ -24,6 +24,12 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
+            <Button 
+                x:Name="analyticsLog"
+                Text="Analytics Log"
+                Clicked="analyticsLog_Clicked"
+                HorizontalOptions="Fill" />
+
             <Button
                 x:Name="loginBtn"
                 Text="Login" 

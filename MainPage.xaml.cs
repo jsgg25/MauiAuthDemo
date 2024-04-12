@@ -5,10 +5,13 @@ namespace MauiAuthDemo
     public partial class MainPage : ContentPage
     {
 
-        private readonly IGoogleAuthService _googleAuthService = new GoogleAuthService();
-
-        public MainPage()
+        private readonly IGoogleAuthService _googleAuthService;
+        private readonly IAnalyticsService _analyticsService;
+        public MainPage(IGoogleAuthService googleAuthService, IAnalyticsService analyticsService)
         {
+
+            _googleAuthService = googleAuthService;
+            _analyticsService = analyticsService;
             InitializeComponent();
         }
 
@@ -32,6 +35,14 @@ namespace MauiAuthDemo
             await _googleAuthService?.LogoutAsync();
 
             await Application.Current.MainPage.DisplayAlert("Login Message", "Goodbye", "Ok");
+
+        }
+
+        private void analyticsLog_Clicked(object sender, EventArgs e)
+        {
+
+            _analyticsService.Log("Event_AnaliticsLogClicked");
+
 
         }
     }
