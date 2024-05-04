@@ -21,7 +21,10 @@ namespace MauiAuthDemo
 #if IOS
                 events.AddiOS(iOS => iOS.FinishedLaunching((App, launchOptions) => {
                         Firebase.Core.App.Configure();
-                        return false;
+                    Firebase.Crashlytics.Crashlytics.SharedInstance.Init();
+                    Firebase.Crashlytics.Crashlytics.SharedInstance.SetCrashlyticsCollectionEnabled(true);
+                    Firebase.Crashlytics.Crashlytics.SharedInstance.SendUnsentReports();
+                        return false;   
                 }));
 #else
                     events.AddAndroid(android => android.OnCreate((activity, bundle) =>
@@ -35,14 +38,14 @@ namespace MauiAuthDemo
 
 
             builder.Services.AddSingleton<IAnalyticsService, AnalyticsService>();
-
+            builder.Services.AddSingleton<ICrashlyticsService, CrashlyticsService>();
 
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
 
             builder.Services.AddSingleton<IGoogleAuthService, GoogleAuthService>();
-            builder.Services.AddSingleton<MainPage> ();
+            builder.Services.AddSingleton<MainPage>();
 
             return builder.Build();
         }

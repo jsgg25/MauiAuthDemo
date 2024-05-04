@@ -25,6 +25,13 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button 
+                x:Name="crashlyticsLog"
+                Text="Crashlytics Log"
+                Clicked="crashlyticsLog_Clicked"
+                HorizontalOptions="Fill" />
+
+
+            <Button 
                 x:Name="analyticsLog"
                 Text="Analytics Log"
                 Clicked="analyticsLog_Clicked"
@@ -42,7 +49,7 @@
                 Text="Logout" 
                 Clicked="logoutBtn_Clicked"
                 HorizontalOptions="Fill" />
-            
+
         </VerticalStackLayout>
     </ScrollView>
 

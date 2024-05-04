@@ -7,11 +7,13 @@ namespace MauiAuthDemo
 
         private readonly IGoogleAuthService _googleAuthService;
         private readonly IAnalyticsService _analyticsService;
-        public MainPage(IGoogleAuthService googleAuthService, IAnalyticsService analyticsService)
+        private readonly ICrashlyticsService _crashlyticsService;
+        public MainPage(IGoogleAuthService googleAuthService, IAnalyticsService analyticsService, ICrashlyticsService crashlyticsService)
         {
 
             _googleAuthService = googleAuthService;
             _analyticsService = analyticsService;
+            _crashlyticsService = crashlyticsService;
             InitializeComponent();
         }
 
@@ -43,6 +45,20 @@ namespace MauiAuthDemo
 
             _analyticsService.Log("Event_AnaliticsLogClicked");
 
+
+        }
+
+        int zero = 0;
+        private void crashlyticsLog_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var divisionByZero = 10 / zero;
+            }
+            catch
+            {
+                _crashlyticsService.Log(new Exception("User tried to divide by 0."));
+            }
 
         }
     }
